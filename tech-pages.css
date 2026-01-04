@@ -672,11 +672,13 @@
 }
 
 .compliance-card {
+    display: block;
     background: var(--dark);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius);
     padding: 24px;
     text-align: center;
+    text-decoration: none;
     transition: all 0.3s;
 }
 
@@ -696,6 +698,19 @@
 .compliance-card p {
     color: var(--gray-light);
     font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.compliance-card .card-link {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.compliance-card:hover .card-link {
+    opacity: 1;
 }
 
 /* CTA Section */
