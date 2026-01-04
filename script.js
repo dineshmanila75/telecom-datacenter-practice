@@ -182,7 +182,7 @@ function initContactForm() {
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch(form.action, {
+                const response = await fetch('https://formspree.io/f/xzdzkoww', {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -190,14 +190,18 @@ function initContactForm() {
                     }
                 });
 
+                const data = await response.json();
+                
                 if (response.ok) {
                     showNotification('Thank you! Your message has been sent.', 'success');
                     form.reset();
                 } else {
-                    showNotification('Oops! Something went wrong. Please try again.', 'error');
+                    console.error('Form error:', data);
+                    showNotification(data.error || 'Oops! Something went wrong. Please try again.', 'error');
                 }
             } catch (error) {
-                showNotification('Oops! Something went wrong. Please try again.', 'error');
+                console.error('Network error:', error);
+                showNotification('Network error. Please check your connection and try again.', 'error');
             }
 
             submitBtn.textContent = originalText;
