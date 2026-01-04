@@ -161,53 +161,8 @@ function initMobileMenu() {
 
 // Contact form handling
 function initContactForm() {
-    const form = document.getElementById('contactForm');
-    
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            
-            // Simple validation
-            if (!formData.get('name') || !formData.get('email')) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            try {
-                const response = await fetch('https://formspree.io/f/xzdzkoww', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                const data = await response.json();
-                
-                if (response.ok) {
-                    showNotification('Thank you! Your message has been sent.', 'success');
-                    form.reset();
-                } else {
-                    console.error('Form error:', data);
-                    showNotification(data.error || 'Oops! Something went wrong. Please try again.', 'error');
-                }
-            } catch (error) {
-                console.error('Network error:', error);
-                showNotification('Network error. Please check your connection and try again.', 'error');
-            }
-
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
-    }
+    // Let Formspree handle the form natively
+    // Form will redirect to Formspree thank you page
 }
 
 // Notification system
