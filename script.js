@@ -164,31 +164,44 @@ function initContactForm() {
     const form = document.getElementById('contactForm');
     
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
             
             // Simple validation
-            if (!data.name || !data.email) {
+            if (!formData.get('name') || !formData.get('email')) {
                 showNotification('Please fill in all required fields.', 'error');
                 return;
             }
 
-            // Simulate form submission
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showNotification('Thank you! We\'ll be in touch soon.', 'success');
-                form.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showNotification('Thank you! Your message has been sent.', 'success');
+                    form.reset();
+                } else {
+                    showNotification('Oops! Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showNotification('Oops! Something went wrong. Please try again.', 'error');
+            }
+
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         });
     }
 }
