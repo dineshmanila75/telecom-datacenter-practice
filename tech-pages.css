@@ -27,6 +27,9 @@
     margin-bottom: 24px;
     font-size: 0.95rem;
     transition: color 0.3s;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .back-link:hover {
