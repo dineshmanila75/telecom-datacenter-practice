@@ -1146,3 +1146,18 @@ textarea:focus {
         padding-top: 40px;
     }
 }
+
+/* Tech Category Links */
+.tech-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.tech-link:hover {
+    color: var(--primary);
+}
+
+.tech-category:hover .tech-link {
+    color: var(--primary);
+}

@@ -1,0 +1,408 @@
+/* Technology Pages Styles */
+
+/* Hero Section */
+.tech-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 140px 24px 80px;
+    overflow: hidden;
+}
+
+.tech-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);
+}
+
+.tech-hero-content {
+    max-width: 800px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--gray-light);
+    text-decoration: none;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+.tech-icon-hero {
+    font-size: 4rem;
+    margin-bottom: 24px;
+}
+
+.tech-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.tech-hero p {
+    font-size: 1.25rem;
+    color: var(--gray-light);
+    max-width: 600px;
+}
+
+/* Overview Section */
+.tech-overview {
+    padding: 100px 0;
+    background: var(--dark-light);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.overview-content p {
+    color: var(--gray-light);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.overview-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.overview-stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+/* Tech Visual Placeholders */
+.overview-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-visual {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background: var(--dark);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
+}
+
+/* Network Visual */
+.network-visual .visual-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.network-visual .visual-node:nth-child(1) { top: 30%; left: 20%; animation-delay: 0s; }
+.network-visual .visual-node:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
+.network-visual .visual-node:nth-child(3) { bottom: 30%; left: 30%; animation-delay: 1s; }
+.network-visual .visual-node:nth-child(4) { bottom: 30%; right: 30%; animation-delay: 1.5s; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+/* DC Visual */
+.dc-visual .rack {
+    position: absolute;
+    width: 60px;
+    height: 150px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 4px;
+    bottom: 50px;
+}
+
+.dc-visual .rack:nth-child(1) { left: 20%; }
+.dc-visual .rack:nth-child(2) { left: 45%; }
+.dc-visual .rack:nth-child(3) { left: 70%; }
+
+/* Cloud Visual */
+.cloud-visual .cloud-shape {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50px;
+    opacity: 0.5;
+}
+
+.cloud-visual .edge-node {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--secondary);
+    border-radius: 6px;
+    bottom: 20%;
+}
+
+.cloud-visual .edge-node:nth-child(2) { left: 20%; }
+.cloud-visual .edge-node:nth-child(3) { left: 45%; }
+.cloud-visual .edge-node:nth-child(4) { left: 70%; }
+
+/* Security Visual */
+.security-visual .shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.6;
+}
+
+/* Tech Details Section */
+.tech-details {
+    padding: 100px 0;
+    background: var(--dark);
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-detail-card {
+    background: var(--dark-light);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-bottom: 32px;
+    transition: all 0.3s ease;
+}
+
+.tech-detail-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.tech-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.tech-detail-header h3 {
+    font-size: 1.5rem;
+}
+
+.tech-detail-content > p {
+    color: var(--gray-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.tech-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.feature h4 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.feature ul {
+    list-style: none;
+}
+
+.feature li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--gray-light);
+}
+
+.feature li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+/* Badge Styles */
+.tech-badge {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(100, 116, 139, 0.2);
+    color: var(--gray-light);
+}
+
+.tech-badge.hot {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.tech-badge.emerging {
+    background: rgba(34, 211, 238, 0.2);
+    color: var(--accent);
+}
+
+.tech-badge.mature {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+/* Compliance Section */
+.compliance-section {
+    padding: 100px 0;
+    background: var(--dark-light);
+}
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.compliance-card {
+    background: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.compliance-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-3px);
+}
+
+.compliance-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.compliance-card p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+/* CTA Section */
+.tech-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.cta-content p {
+    color: var(--gray-light);
+    margin-bottom: 32px;
+}
+
+/* Active Nav Link */
+.nav-links a.active {
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .overview-image {
+        order: -1;
+    }
+    
+    .tech-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .compliance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-hero {
+        padding: 120px 24px 60px;
+        min-height: auto;
+    }
+    
+    .overview-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    
+    .overview-stat {
+        flex: 1 1 100px;
+    }
+    
+    .tech-detail-card {
+        padding: 24px;
+    }
+    
+    .compliance-grid {
+        grid-template-columns: 1fr;
+    }
+}
