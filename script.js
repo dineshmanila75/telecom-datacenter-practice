@@ -300,6 +300,69 @@ function initTrendCharts() {
         return gradient;
     }
 
+    // Explosive Data Growth Mini Chart (in trend card)
+    const explosiveDataCtx = document.getElementById('explosiveDataChart');
+    if (explosiveDataCtx) {
+        const ctx = explosiveDataCtx.getContext('2d');
+        const gradient = createGradient(ctx, 'rgba(34, 211, 238, 0.5)', 'rgba(34, 211, 238, 0.0)');
+        
+        new Chart(explosiveDataCtx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Data (ZB)',
+                    data: [64, 79, 97, 120, 147, 180],
+                    borderColor: '#22d3ee',
+                    backgroundColor: gradient,
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#22d3ee',
+                    pointBorderColor: '#0f172a',
+                    pointBorderWidth: 2,
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleColor: '#f1f5f9',
+                        bodyColor: '#94a3b8',
+                        borderColor: 'rgba(34, 211, 238, 0.3)',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: (context) => `${context.parsed.y} ZB`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 9 }, color: '#64748b' }
+                    },
+                    y: {
+                        beginAtZero: false,
+                        min: 50,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { 
+                            font: { size: 9 },
+                            color: '#64748b',
+                            callback: (value) => value + ' ZB'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
     // 1. Global Data Growth Chart (Area Chart)
     const dataGrowthCtx = document.getElementById('dataGrowthChart');
     if (dataGrowthCtx) {

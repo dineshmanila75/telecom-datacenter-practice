@@ -16,7 +16,12 @@
         <div class="nav-container">
             <div class="logo">
                 <span class="logo-icon">◈</span>
-                <span class="logo-text">TelecomDC</span>
+                <span class="logo-text">Telecom & DC</span>
+                <div class="logo-animation">
+                    <div class="logo-signal"></div>
+                    <div class="logo-signal"></div>
+                    <div class="logo-signal"></div>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -45,12 +50,42 @@
             </div>
         </div>
         <div class="hero-content">
-            <span class="hero-badge">🚀 Leading Digital Transformation</span>
-            <h1>Telecom & Datacenter<br><span class="gradient-text">Practice Excellence</span></h1>
-            <p>Empowering enterprises with next-generation infrastructure solutions. From 5G networks to hyperscale datacenters, we architect the digital backbone of tomorrow.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
-                <a href="#trends" class="btn btn-secondary">Explore Insights</a>
+            <div class="hero-main">
+                <div class="hero-text">
+                    <span class="hero-badge">🚀 Leading Digital Transformation</span>
+                    <h1>TELECOM & DC<br><span class="gradient-text">Practice Excellence</span></h1>
+                    <p>Empowering enterprises with next-generation infrastructure solutions. From 5G networks to hyperscale datacenters, we architect the digital backbone of tomorrow.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                        <a href="#trends" class="btn btn-secondary">Explore Insights</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-animation">
+                        <div class="dc-building">
+                            <div class="dc-roof"></div>
+                            <div class="dc-body">
+                                <div class="dc-rack"><div class="rack-light"></div><div class="rack-light"></div><div class="rack-light"></div></div>
+                                <div class="dc-rack"><div class="rack-light"></div><div class="rack-light"></div><div class="rack-light"></div></div>
+                                <div class="dc-rack"><div class="rack-light"></div><div class="rack-light"></div><div class="rack-light"></div></div>
+                            </div>
+                        </div>
+                        <div class="signal-tower">
+                            <div class="tower-pole"></div>
+                            <div class="tower-antenna"></div>
+                            <div class="signal-wave wave-1"></div>
+                            <div class="signal-wave wave-2"></div>
+                            <div class="signal-wave wave-3"></div>
+                        </div>
+                        <div class="data-flow">
+                            <div class="data-particle p1"></div>
+                            <div class="data-particle p2"></div>
+                            <div class="data-particle p3"></div>
+                            <div class="data-particle p4"></div>
+                        </div>
+                        <div class="connection-line"></div>
+                    </div>
+                </div>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -83,6 +118,9 @@
                     <div class="trend-content">
                         <h3>Explosive Data Growth</h3>
                         <p>Global data creation projected to reach 180 zettabytes by 2025. Edge computing and AI workloads driving unprecedented demand for distributed infrastructure.</p>
+                        <div class="trend-mini-chart">
+                            <canvas id="explosiveDataChart"></canvas>
+                        </div>
                         <div class="trend-stat">
                             <span class="big-number">180ZB</span>
                             <span>Global Data by 2025</span>
@@ -91,21 +129,58 @@
                 </div>
                 <div class="trend-card">
                     <div class="trend-icon">🌐</div>
+                    <div class="trend-visual trend-5g">
+                        <div class="tower-mini"></div>
+                        <div class="wave-mini w1"></div>
+                        <div class="wave-mini w2"></div>
+                        <div class="wave-mini w3"></div>
+                        <div class="device-mini d1"></div>
+                        <div class="device-mini d2"></div>
+                        <div class="device-mini d3"></div>
+                    </div>
                     <h3>5G Monetization</h3>
                     <p>Operators shifting focus from coverage to revenue generation through enterprise private networks and network slicing.</p>
                 </div>
                 <div class="trend-card">
                     <div class="trend-icon">🌱</div>
+                    <div class="trend-visual trend-sustainable">
+                        <div class="leaf-icon"></div>
+                        <div class="energy-bar bar1"></div>
+                        <div class="energy-bar bar2"></div>
+                        <div class="energy-bar bar3"></div>
+                        <div class="pue-indicator">PUE 1.2</div>
+                    </div>
                     <h3>Sustainable Infrastructure</h3>
                     <p>Carbon-neutral datacenters becoming mandatory. PUE targets dropping below 1.2 with liquid cooling adoption.</p>
                 </div>
                 <div class="trend-card">
                     <div class="trend-icon">🔒</div>
+                    <div class="trend-visual trend-security">
+                        <div class="shield-icon">
+                            <div class="shield-check"></div>
+                        </div>
+                        <div class="security-ring ring1"></div>
+                        <div class="security-ring ring2"></div>
+                        <div class="lock-particle lp1"></div>
+                        <div class="lock-particle lp2"></div>
+                        <div class="lock-particle lp3"></div>
+                    </div>
                     <h3>Zero Trust Security</h3>
                     <p>Network security evolving from perimeter-based to identity-centric models across hybrid environments.</p>
                 </div>
                 <div class="trend-card">
                     <div class="trend-icon">🤖</div>
+                    <div class="trend-visual trend-aiops">
+                        <div class="brain-icon">
+                            <div class="neuron n1"></div>
+                            <div class="neuron n2"></div>
+                            <div class="neuron n3"></div>
+                            <div class="neuron n4"></div>
+                        </div>
+                        <div class="ai-pulse"></div>
+                        <div class="data-stream ds1"></div>
+                        <div class="data-stream ds2"></div>
+                    </div>
                     <h3>AI-Driven Operations</h3>
                     <p>AIOps reducing MTTR by 60% while predictive maintenance prevents 90% of potential outages.</p>
                 </div>
@@ -411,49 +486,49 @@
                 </a>
                 <a href="https://www.ericsson.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img ericsson-logo">
-                        <svg viewBox="0 0 140 40" fill="currentColor"><text x="5" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold">ERICSSON</text></svg>
+                        <svg version="1.1" viewBox="0 0 1500 304" xml:space="preserve"><g fill="currentColor"><polygon points="3,94.7 124,94.7 124,127.6 45.8,127.6 45.8,156.2 120.8,156.2 120.8,190.4 45.8,190.4 45.8,219.9 125.3,219.9 125.3,253.1 3,253.1"></polygon><polygon points="312.3,94.7 355.4,94.7 355.4,253.2 312.3,253.2"></polygon><path d="M512.7,99.8l-2.9,33.9c-34.8-20.2-88.2-13.7-89.1,39.1c-1,52.8,55,60.5,90.4,42.6l2.2,34.6 c-62.6,19.5-137.4-0.3-137.1-77.2C376.5,97.5,451.9,76.7,512.7,99.8L512.7,99.8z"></path><path d="M639.6,97.3l-2.9,33c-21.7-12-63-12.3-63,6.5c0,27.8,73.5,7.7,73.5,67.3c0,58.6-70,59.2-115.4,45.7l3.2-34.9 c28.4,13.3,68.7,16.2,68.7-6.8c0-25.2-73.8-11-73.8-67.7C529.9,93.9,587.5,81.5,639.6,97.3L639.6,97.3z"></path><path d="M769.6,97.3l-2.9,33c-21.7-12-63-12.3-63,6.5c0,27.8,73.5,7.7,73.5,67.3c0,58.6-70,59.2-115.4,45.7l3.2-34.9 c28.4,13.3,68.7,16.2,68.7-6.8c0-25.2-73.8-11-73.8-67.7C660,93.9,717.5,81.5,769.6,97.3L769.6,97.3z"></path><polygon points="968.1,94.7 1022.7,94.7 1074.7,196.9 1074.7,94.7 1114.4,94.7 1114.4,253.2 1062.9,253.2 1008.1,149 1008.1,253.2 968.1,253.2"></polygon><path d="M868.7,90.9c44.8,0,78.9,26.2,78.9,83.4c0,54.7-34.3,82.8-78.9,82.8c-44.5,0-78.7-27.5-78.7-82.8 C790.1,117.1,824,90.9,868.7,90.9L868.7,90.9z M834.2,174.3c0,24.2,10.4,51.5,34.5,51.5c24.2,0,34.3-27.3,34.5-51.5 c0.2-21.8-10.3-51.4-34.5-51.5C844.6,122.8,834.2,150.1,834.2,174.3L834.2,174.3z"></path><path d="M196.6,161.5h23.6c10.6,0.2,20.2-6.2,20.1-17.9c-0.1-10.4-8.6-17.7-19.5-17.6h-24.3L196.6,161.5L196.6,161.5z M155.3,94.7H233c21.1,0,50.5,9.3,50.5,42.2c0,21.1-9.6,32.9-27.7,38.3c0.8-0.1,10.4,4.1,14.3,16c0.2,0.4,22.2,61.9,22.5,62h-45.8 l-16.3-47.6c-2.5-7.3-7.9-12.2-15.7-12.2c-6.7,0-17.3-0.4-17.3,0v59.8h-42.2V94.7L155.3,94.7z"></path></g><g fill="currentColor"><path d="M1495.5,21.9c-2.5-7.7-8-13.7-14.8-17.1c-6.8-3.4-14.8-4.2-28.2,0.3l-151.6,50.5 c-13.3,4.4-19.3,9.9-22.7,16.7s-4.2,14.8-1.6,22.6c2.5,7.7,8,13.7,14.8,17.1c6.8,3.4,14.8,4.2,28.2-0.3l151.6-50.5 c13.3-4.4,19.3-9.9,22.7-16.7C1497.3,37.7,1498.1,29.7,1495.5,21.9z"></path><path d="M1495.5,115.5c-2.5-7.7-8-13.7-14.8-17.1c-6.8-3.4-14.8-4.2-28.2,0.3l-151.6,50.5 c-13.3,4.4-19.3,9.9-22.7,16.7c-3.4,6.8-4.2,14.8-1.6,22.6c2.5,7.7,8,13.7,14.8,17.1c6.8,3.4,14.8,4.2,28.2-0.3l151.6-50.5 c13.3-4.4,19.3-9.9,22.7-16.7C1497.3,131.3,1498.1,123.3,1495.5,115.5z"></path><path d="M1495.5,209.1c-2.5-7.7-8-13.7-14.8-17.1c-6.8-3.4-14.8-4.2-28.2,0.3l-151.6,50.5 c-13.3,4.4-19.3,9.9-22.7,16.7c-3.4,6.8-4.2,14.8-1.6,22.6c2.5,7.7,8,13.7,14.8,17.1s14.8,4.2,28.2-0.3l151.6-50.5 c13.3-4.5,19.3-9.9,22.7-16.7C1497.3,224.9,1498.1,216.9,1495.5,209.1z"></path></g></svg>
                     </div>
                     <span class="partner-name">Ericsson</span>
                 </a>
                 <a href="https://www.dell.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img dell-logo">
-                        <svg viewBox="0 0 100 40" fill="currentColor"><circle cx="50" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/><text x="50" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold">DELL</text></svg>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell">
                     </div>
                     <span class="partner-name">Dell</span>
                 </a>
                 <a href="https://www.hpe.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img hpe-logo">
-                        <svg viewBox="0 0 100 40" fill="currentColor"><rect x="5" y="5" width="90" height="30" stroke="currentColor" stroke-width="2" fill="none"/><text x="50" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold">HPE</text></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 180"><path d="M18 180 V0" stroke="currentColor" fill="none" stroke-width="36"/><path d="M172 180 V0" stroke="currentColor" fill="none" stroke-width="36"/><path d="M18 89 H155" stroke="currentColor" fill="none" stroke-width="36"/><path d="M250 180 V0" stroke="currentColor" fill="none" stroke-width="36"/><path d="M250 18 H352 A32 32 0 0 1 352 118 H250" stroke="currentColor" fill="none" stroke-width="36"/><path d="M472 51 V18 H630" stroke="currentColor" fill="none" stroke-width="36"/><path d="M630 162 H472 V86 H630" stroke="#01a982" fill="none" stroke-width="36"/></svg>
                     </div>
                     <span class="partner-name">HPE</span>
                 </a>
                 <a href="https://www.vmware.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img vmware-logo">
-                        <svg viewBox="0 0 120 40" fill="currentColor"><text x="10" y="28" font-family="Arial, sans-serif" font-size="20" font-weight="bold">VMware</text></svg>
+                        <img src="https://www.vmware.com/media/blt8c9a8aaca0ffd4ac/blt5a3e185aed7848a3/65fac63dd3267616e27e7051/vmware-logo-grey.svg" alt="VMware">
                     </div>
                     <span class="partner-name">VMware</span>
                 </a>
                 <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img aws-logo">
-                        <svg viewBox="0 0 100 60" fill="currentColor"><path d="M30 35 Q30 20 50 20 Q70 20 70 30 Q85 30 85 42 Q85 50 70 50 L30 50 Q18 50 18 40 Q18 32 30 35" stroke="currentColor" stroke-width="2" fill="none"/><text x="50" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">AWS</text></svg>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
                     </div>
                     <span class="partner-name">AWS</span>
                 </a>
                 <a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img azure-logo">
-                        <svg viewBox="0 0 100 50" fill="currentColor"><polygon points="20,40 45,10 55,10 35,40" fill="currentColor" opacity="0.7"/><polygon points="35,40 80,40 55,10 45,25" fill="currentColor"/><text x="50" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Azure</text></svg>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure">
                     </div>
                     <span class="partner-name">Microsoft Azure</span>
                 </a>
                 <a href="https://cloud.google.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img gcp-logo">
-                        <svg viewBox="0 0 120 50" fill="currentColor"><polygon points="60,5 85,20 85,40 60,55 35,40 35,20" stroke="currentColor" stroke-width="2" fill="none"/><text x="60" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">GCP</text></svg>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud">
                     </div>
                     <span class="partner-name">Google Cloud</span>
                 </a>
                 <a href="https://www.paloaltonetworks.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo-img palo-logo">
-                        <svg viewBox="0 0 120 50" fill="currentColor"><path d="M60 5 L90 15 L90 35 L60 45 L30 35 L30 15 Z" stroke="currentColor" stroke-width="2" fill="none"/><text x="60" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold">PALO ALTO</text></svg>
+                        <svg viewBox="0 0 200 40" fill="currentColor"><path d="M8.5,2.5h7.3c5.8,0,9.4,3.2,9.4,8.5s-3.6,8.5-9.4,8.5h-3.1v10.3H8.5V2.5z M15.3,15.5c3.2,0,5.2-1.7,5.2-4.5s-2-4.5-5.2-4.5h-2.6v9H15.3z"/><path d="M36.8,2.5h4.5l9.8,27.3h-4.5l-2.2-6.5H33.6l-2.2,6.5h-4.5L36.8,2.5z M39,8.5l-3.8,11h7.6L39,8.5z"/><path d="M54.5,2.5h4.2v23.3h11.5v4H54.5V2.5z"/><path d="M73.5,16.2c0-8,5.8-14.2,13.8-14.2s13.8,6.2,13.8,14.2s-5.8,14.2-13.8,14.2S73.5,24.2,73.5,16.2z M96.5,16.2c0-5.5-3.8-10-9.2-10s-9.2,4.5-9.2,10s3.8,10,9.2,10S96.5,21.7,96.5,16.2z"/><path d="M117.5,2.5h4.5l9.8,27.3h-4.5l-2.2-6.5h-10.8l-2.2,6.5h-4.5L117.5,2.5z M119.7,8.5l-3.8,11h7.6L119.7,8.5z"/><path d="M135.2,2.5h4.2v23.3h11.5v4h-15.7V2.5z"/><path d="M156.2,6.5h-7.5v-4h19.2v4h-7.5v23.3h-4.2V6.5z"/><path d="M170.5,16.2c0-8,5.8-14.2,13.8-14.2s13.8,6.2,13.8,14.2s-5.8,14.2-13.8,14.2S170.5,24.2,170.5,16.2z M193.5,16.2c0-5.5-3.8-10-9.2-10s-9.2,4.5-9.2,10s3.8,10,9.2,10S193.5,21.7,193.5,16.2z"/></svg>
                     </div>
                     <span class="partner-name">Palo Alto Networks</span>
                 </a>
